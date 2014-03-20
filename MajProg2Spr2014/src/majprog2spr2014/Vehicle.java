@@ -20,4 +20,13 @@ package majprog2spr2014;
  */
 public class Vehicle {
 
+    //Declare class-level varables.
+    String make;
+    String model;
+    String vin;
+    int year;
+
+    public Vehicle() {
+
+    }
 }
