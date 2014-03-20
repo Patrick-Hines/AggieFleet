@@ -20,6 +20,12 @@ package majprog2spr2014;
 public class ProgramDriver {
 
     public static void main(String[] args) {
-        System.out.println("Hello, world.");
+
+        //Testing Vehcile class
+        Vehicle newVehicle = new Vehicle("Toyota", "Corolla", "Lorem Ipsum.", 1966);
+
+        System.out.println("Vehicle class data (make, model, vin, year) : ");
+        System.out.println(newVehicle.toString());
+        System.out.println(System.getProperty("line.separator"));
     }
 }
