@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication3;
+package majprog2spr2014;
 
 /**
  *
  * @author Patrick Hines
  */
-public class JavaApplication3 {
+public class MajProg2Spr2014 {
 
     /**
      * @param args the command line arguments
