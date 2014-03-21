@@ -28,9 +28,9 @@ public class Vehicle {
     protected int year;
 
     public Vehicle() {
-        make = "";
-        model = "";
-        vin = "";
+        make = "No Data Given. Please create a new Vehicle object with formal parameters first.";
+        model = "No Data Given. Please create a new Vehicle object with formal parameters first.";
+        vin = "No Data Given. Please create a new Vehicle object with formal parameters first.";
 
         year = 0;
     }

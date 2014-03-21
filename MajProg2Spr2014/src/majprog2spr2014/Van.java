@@ -41,7 +41,8 @@ public class Van extends Vehicle {
     public String toString() {
         String finalString = "";
 
-        finalString += "V" + super.toString() + System.getProperty("line.separator")
+        finalString += "V" + System.getProperty("line.separator")
+                + super.toString() + System.getProperty("line.separator")
                 + clearanceHeight + System.getProperty("line.separator")
                 + numWindows + System.getProperty("line.separator");
 
