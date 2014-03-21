@@ -26,6 +26,11 @@ public class ProgramDriver {
 
         System.out.println("Vehicle class data (make, model, vin, year) : ");
         System.out.println(newVehicle.toString());
-        System.out.println(System.getProperty("line.separator"));
+
+        //Testing Automobile class
+        newVehicle = new Automobile(false, 5, 30);
+
+        System.out.println("Automobile class data (hybrid, maxPassengers, trunkSpace) : ");
+        System.out.println(newVehicle.toString());
     }
 }
