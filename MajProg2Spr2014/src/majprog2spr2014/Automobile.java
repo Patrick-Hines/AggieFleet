@@ -2,11 +2,12 @@
  * ====================================================
 
  Objective: This program will set the framework
- for all necessary vehicles. It is also a subclass of
+ for all necessary automobiles. It is also a subclass of
  Vehicle.
 
  Developed by: Patrick Hines
- Began: 3-20-2014
+ Began: 3-21-2014
+ Ended: 3-21-2014
 
 
  * ====================================================
@@ -25,14 +26,16 @@ public class Automobile extends Vehicle {
     private float trunkSpace;
 
     public Automobile() {
-        super();
+        //Introduce 'super()'
+
         hybrid = false;
         maxPassengers = 0;
         trunkSpace = 0;
     }
 
     public Automobile(boolean isHybrid, int givenMaxPassengers, float givenTrunkSpace) {
-        super("Toyota", "Corolla", "Lorem Ipsum.", 1966);
+        //Introduce 'super()'
+
         hybrid = isHybrid;
         maxPassengers = givenMaxPassengers;
         trunkSpace = givenTrunkSpace;
@@ -86,7 +89,7 @@ public class Automobile extends Vehicle {
     @Override
     public String toString() {
         String finalString = "";
-        finalString += super.toString() + System.getProperty("line.separator")
+        finalString += "A" + super.toString() + System.getProperty("line.separator")
                 + hybrid + System.getProperty("line.separator")
                 + maxPassengers + System.getProperty("line.separator")
                 + trunkSpace + System.getProperty("line.separator");
