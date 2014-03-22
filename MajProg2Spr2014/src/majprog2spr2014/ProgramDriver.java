@@ -4,6 +4,8 @@
  Objective: This program will serve as the hub
  for all other classes in the project.
 
+
+
  Developed by: Patrick Hines
  Began: 3-21-2014
  Ended:
@@ -29,15 +31,21 @@ public class ProgramDriver {
         System.out.println(mainVehicle.toString());
 
         //Testing Automobile class
-        mainVehicle = new Automobile(false, 5, 30);
+        mainVehicle = new Automobile(false, 5, 30, "Toyota", "Corolla", "Lorem Ipsum.", 1966);
 
         System.out.println("Automobile class data (hybrid, maxPassengers, trunkSpace) : ");
         System.out.println(mainVehicle.toString());
 
         //Testing Van class
-        mainVehicle = new Van(20, 6);
+        mainVehicle = new Van(20, 6, "Toyota", "Corolla", "Lorem Ipsum.", 1966);
 
         System.out.println("Van class data (clearanceHeight, numWindows) : ");
+        System.out.println(mainVehicle.toString());
+
+        //Testing Passenger Van class
+        mainVehicle = new PassengerVan(3, 9, true, 20, 6, "Toyota", "Corolla", "Lorem Ipsum.", 1966);
+
+        System.out.println("PassengerVan class data (numSeatRows, maxPassengers, dvdPlayer) : ");
         System.out.println(mainVehicle.toString());
     }
 }

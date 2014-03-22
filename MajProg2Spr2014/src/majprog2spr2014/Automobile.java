@@ -26,7 +26,6 @@ public class Automobile extends Vehicle {
     private float trunkSpace;
 
     public Automobile() {
-        //Introduce 'super()'
 
         hybrid = false;
         maxPassengers = 0;
@@ -34,7 +33,28 @@ public class Automobile extends Vehicle {
     }
 
     public Automobile(boolean isHybrid, int givenMaxPassengers, float givenTrunkSpace) {
-        //Introduce 'super()'
+
+        hybrid = isHybrid;
+        maxPassengers = givenMaxPassengers;
+        trunkSpace = givenTrunkSpace;
+    }
+
+    /**
+     *
+     * @param isHybrid
+     * @param givenMaxPassengers
+     * @param givenTrunkSpace
+     * @param superMake
+     * @param superModel
+     * @param superVin
+     * @param superYear
+     *
+     * Formal-Arg constructor that takes in data for the superclass 'Vehicle'
+     */
+    public Automobile(boolean isHybrid, int givenMaxPassengers, float givenTrunkSpace,
+            String superMake, String superModel, String superVin, int superYear) {
+
+        super(superMake, superModel, superVin, superYear);
 
         hybrid = isHybrid;
         maxPassengers = givenMaxPassengers;

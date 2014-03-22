@@ -5,6 +5,10 @@
  for all necessary vans. It is also a subclass of
  Vehicle.
 
+ NOTE: This class includes an optional constructor to
+ pass data to the superclass. This constructor is not
+ explictly stated on the UML diagram for this class.
+
  Developed by: Patrick Hines
  Began: 3-21-2014
  Ended:
@@ -30,6 +34,23 @@ public class Van extends Vehicle {
     }
 
     public Van(float givenClearanceHeight, int givenNumWindows) {
+        clearanceHeight = givenClearanceHeight;
+        numWindows = givenNumWindows;
+    }
+
+    /**
+     * @param givenClearanceHeight
+     * @param givenNumWindows
+     * @param superMake
+     * @param superModel
+     * @param superVin
+     * @param superYear
+     *
+     * Formal-Arg constructor that takes in data for the superclass 'Vehicle'
+     */
+    public Van(float givenClearanceHeight, int givenNumWindows, String superMake, String superModel, String superVin, int superYear) {
+
+        super(superMake, superModel, superVin, superYear);
         clearanceHeight = givenClearanceHeight;
         numWindows = givenNumWindows;
     }
