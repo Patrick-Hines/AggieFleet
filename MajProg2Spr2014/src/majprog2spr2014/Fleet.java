@@ -25,15 +25,29 @@ public class Fleet {
     String fleetName;
     ArrayList<Vehicle> fleetList;
 
+    /**
+     * No-Argument Constructor. Sets properties to their default values.
+     */
     public Fleet() {
         fleetName = "";
         fleetList = null;
     }
 
+    /**
+     *
+     * @param fleetName
+     *
+     * Constructor with formal parameters to set 'fleetName' to its specified
+     * value.
+     */
     public Fleet(String fleetName) {
         this.fleetName = fleetName;
     }
 
+    /**
+     *
+     * @return All data within the Fleet class as a single String.
+     */
     @Override
     public String toString() {
         String finalString = "";
@@ -41,30 +55,73 @@ public class Fleet {
         return finalString;
     }
 
+    /**
+     *
+     * @param inputFileName
+     *
+     * Reads in data from the given filepath and assigns the proper values to
+     * each property in the Fleet class.
+     */
     public void loadFleet(String inputFileName) {
 
     }
 
+    /**
+     *
+     * @param outputFileName
+     *
+     * Saves the current properties of the Fleet class to the specified
+     * filepath.
+     */
     public void saveFleet(String outputFileName) {
 
     }
 
-    public Vehicle getVehicle() {
+    /**
+     *
+     * @return A Vehicle object within the fleetList ArrayList at a specific
+     * index.
+     */
+    public Vehicle getVehicle(int index) {
         return null;
     }
 
+    /**
+     *
+     * @return The number of items inside the fleetList ArrayList.
+     */
     public int getNumVehicles() {
         return 0;
     }
 
+    /**
+     *
+     * @param givenVehicle
+     * @param index
+     *
+     * Takes in a Vehicle object and index integer to store the Vehicle within
+     * the fleetList ArrayList at the specific index.
+     *
+     */
     public void setVehicle(Vehicle givenVehicle, int index) {
 
     }
 
+    /**
+     *
+     * @param givenVehicle
+     *
+     * Appends the given Vehicle to the end of the fleetList ArrayList.
+     */
     public void addVehicle(Vehicle givenVehicle) {
 
     }
 
+    /**
+     *
+     * @param desiredClass
+     * @return An ArrayList of Vehicle objects with the specified subclass.
+     */
     public ArrayList<Vehicle> getVehicleList(Object desiredClass) {
         ArrayList<Vehicle> finalList = new ArrayList<>();
 
