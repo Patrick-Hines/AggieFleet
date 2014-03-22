@@ -25,8 +25,8 @@ package majprog2spr2014;
  */
 public class Van extends Vehicle {
 
-    float clearanceHeight;
-    int numWindows;
+    protected float clearanceHeight;
+    protected int numWindows;
 
     public Van() {
         clearanceHeight = 0;
@@ -64,9 +64,37 @@ public class Van extends Vehicle {
 
         finalString += "V" + System.getProperty("line.separator")
                 + super.toString() + System.getProperty("line.separator")
-                + clearanceHeight + System.getProperty("line.separator")
-                + numWindows + System.getProperty("line.separator");
+                + getClearanceHeight() + System.getProperty("line.separator")
+                + getNumWindows() + System.getProperty("line.separator");
 
         return finalString;
+    }
+
+    /**
+     * @return the clearanceHeight
+     */
+    public float getClearanceHeight() {
+        return clearanceHeight;
+    }
+
+    /**
+     * @param clearanceHeight the clearanceHeight to set
+     */
+    public void setClearanceHeight(float clearanceHeight) {
+        this.clearanceHeight = clearanceHeight;
+    }
+
+    /**
+     * @return the numWindows
+     */
+    public int getNumWindows() {
+        return numWindows;
+    }
+
+    /**
+     * @param numWindows the numWindows to set
+     */
+    public void setNumWindows(int numWindows) {
+        this.numWindows = numWindows;
     }
 }
