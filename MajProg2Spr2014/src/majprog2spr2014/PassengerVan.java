@@ -77,8 +77,8 @@ public class PassengerVan extends Van {
      * @param superVin
      * @param superYear
      *
-     * Formal-Arg constructor that takes in data for the superclass 'Van' that
-     * also passes data to the superclass 'Van'
+     * Formal-Arg constructor that takes in data for the superclass 'Van' and
+     * 'Vehicle'
      */
     public PassengerVan(int givenNumSeatRows, int givenMaxPassengers, boolean isDvdPlayer,
             float superClearanceHeight, int superNumWindow, String superMake, String superModel, String superVin, int superYear) {

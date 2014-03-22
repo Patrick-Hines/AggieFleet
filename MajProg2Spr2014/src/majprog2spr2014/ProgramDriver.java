@@ -47,5 +47,11 @@ public class ProgramDriver {
 
         System.out.println("PassengerVan class data (numSeatRows, maxPassengers, dvdPlayer) : ");
         System.out.println(mainVehicle.toString());
+
+        //Testing Cargo Van class
+        mainVehicle = new CargoVan(10, 25, 20, 6, "Toyota", "Corolla", "Lorem Ipsum.", 1966);
+
+        System.out.println("CargoVan class data (numSeatRows, maxPassengers, dvdPlayer) : ");
+        System.out.println(mainVehicle.toString());
     }
 }
