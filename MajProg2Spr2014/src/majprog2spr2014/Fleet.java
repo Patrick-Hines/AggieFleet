@@ -49,6 +49,22 @@ public class Fleet {
 
     }
 
+    public Vehicle getVehicle() {
+        return null;
+    }
+
+    public int getNumVehicles() {
+        return 0;
+    }
+
+    public void setVehicle(Vehicle givenVehicle, int index) {
+
+    }
+
+    public void addVehicle(Vehicle givenVehicle) {
+
+    }
+
     public ArrayList<Vehicle> getVehicleList(Object desiredClass) {
         ArrayList<Vehicle> finalList = new ArrayList<>();
 
