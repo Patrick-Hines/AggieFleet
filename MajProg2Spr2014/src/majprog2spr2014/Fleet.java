@@ -25,4 +25,71 @@ public class Fleet {
     String fleetName;
     ArrayList<Vehicle> fleetList;
 
+    public Fleet() {
+        fleetName = "";
+        fleetList = null;
+    }
+
+    public Fleet(String fleetName) {
+        this.fleetName = fleetName;
+    }
+
+    @Override
+    public String toString() {
+        String finalString = "";
+
+        return finalString;
+    }
+
+    public void loadFleet(String inputFileName) {
+
+    }
+
+    public void saveFleet(String outputFileName) {
+
+    }
+
+    public ArrayList<Vehicle> getVehicleList(Object desiredClass) {
+        ArrayList<Vehicle> finalList = new ArrayList<>();
+
+        if (desiredClass instanceof Vehicle) {
+            for (int i = 0; i < fleetList.size(); i++) {
+                if (fleetList.get(i) instanceof Vehicle) {
+                    finalList.add(fleetList.get(i));
+                }
+            }
+
+        } else if (desiredClass instanceof Van) {
+            for (int i = 0; i < fleetList.size(); i++) {
+                if (fleetList.get(i) instanceof Van) {
+                    finalList.add(fleetList.get(i));
+                }
+            }
+
+        } else if (desiredClass instanceof Automobile) {
+            for (int i = 0; i < fleetList.size(); i++) {
+                if (fleetList.get(i) instanceof Automobile) {
+                    finalList.add(fleetList.get(i));
+                }
+            }
+
+        } else if (desiredClass instanceof CargoVan) {
+            for (int i = 0; i < fleetList.size(); i++) {
+                if (fleetList.get(i) instanceof CargoVan) {
+                    finalList.add(fleetList.get(i));
+                }
+            }
+
+        } else if (desiredClass instanceof PassengerVan) {
+            for (int i = 0; i < fleetList.size(); i++) {
+                if (fleetList.get(i) instanceof PassengerVan) {
+                    finalList.add(fleetList.get(i));
+                }
+            }
+
+        }
+
+        return finalList;
+    }
+
 }
