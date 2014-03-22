@@ -99,9 +99,9 @@ public class PassengerVan extends Van {
 
         finalString += "P" + System.getProperty("line.separator")
                 + super.toString() + System.getProperty("line.separator")
-                + numSeatRows + System.getProperty("line.separator")
-                + maxPassengers + System.getProperty("line.separator")
-                + dvdPlayer + System.getProperty("line.separator");
+                + getNumSeatRows() + System.getProperty("line.separator")
+                + getMaxPassengers() + System.getProperty("line.separator")
+                + getDvdPlayer();
 
         return finalString;
     }

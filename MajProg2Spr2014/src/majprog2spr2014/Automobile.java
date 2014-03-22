@@ -111,9 +111,9 @@ public class Automobile extends Vehicle {
         String finalString = "";
         finalString += "A" + System.getProperty("line.separator")
                 + super.toString() + System.getProperty("line.separator")
-                + hybrid + System.getProperty("line.separator")
-                + maxPassengers + System.getProperty("line.separator")
-                + trunkSpace + System.getProperty("line.separator");
+                + getHybrid() + System.getProperty("line.separator")
+                + getMaxPassengers() + System.getProperty("line.separator")
+                + getTrunkSpace();
 
         return finalString;
     }
