@@ -14,10 +14,15 @@
  */
 package majprog2spr2014;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Patrick Hines
  */
 public class Fleet {
+
+    String fleetName;
+    ArrayList<Vehicle> fleetList;
 
 }

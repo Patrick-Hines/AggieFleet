@@ -25,8 +25,8 @@ package majprog2spr2014;
  */
 public class CargoVan extends Van {
 
-    float maxLoad;
-    float cargoArea;
+    private float maxLoad;
+    private float cargoArea;
 
     public CargoVan() {
         maxLoad = 0;
@@ -89,11 +89,39 @@ public class CargoVan extends Van {
 
         finalString += "C" + System.getProperty("line.separator")
                 + super.toString() + System.getProperty("line.separator")
-                + maxLoad + System.getProperty("line.separator")
-                + cargoArea + System.getProperty("line.separator");
+                + getMaxLoad() + System.getProperty("line.separator")
+                + getCargoArea() + System.getProperty("line.separator");
 
         return finalString;
 
+    }
+
+    /**
+     * @return the maxLoad
+     */
+    public float getMaxLoad() {
+        return maxLoad;
+    }
+
+    /**
+     * @param maxLoad the maxLoad to set
+     */
+    public void setMaxLoad(float maxLoad) {
+        this.maxLoad = maxLoad;
+    }
+
+    /**
+     * @return the cargoArea
+     */
+    public float getCargoArea() {
+        return cargoArea;
+    }
+
+    /**
+     * @param cargoArea the cargoArea to set
+     */
+    public void setCargoArea(float cargoArea) {
+        this.cargoArea = cargoArea;
     }
 
 }
