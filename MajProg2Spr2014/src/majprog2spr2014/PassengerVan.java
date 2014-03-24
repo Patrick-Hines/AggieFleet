@@ -100,8 +100,13 @@ public class PassengerVan extends Van {
         finalString += System.getProperty("line.separator") + "P"
                 + super.toString() + System.getProperty("line.separator")
                 + getNumSeatRows() + System.getProperty("line.separator")
-                + getMaxPassengers() + System.getProperty("line.separator")
-                + getDvdPlayer();
+                + getMaxPassengers() + System.getProperty("line.separator");
+
+        if (getDvdPlayer()) {
+            finalString += "1";
+        } else {
+            finalString += "0";
+        }
 
         return finalString;
     }

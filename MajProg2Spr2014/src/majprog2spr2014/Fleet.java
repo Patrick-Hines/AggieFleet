@@ -57,7 +57,7 @@ public class Fleet {
     @Override
     public String toString() {
         String finalString = "";
-        finalString += getFleetName() + System.getProperty("line.separator");
+        finalString += getFleetName();
 
         for (Vehicle pulledVehicle : fleetList) {
             finalString += pulledVehicle.toString();
@@ -77,6 +77,10 @@ public class Fleet {
         try {
             File data = new File(inputFileName);
             Scanner dataParse = new Scanner(data);
+            boolean dvdPlayer = false;
+            boolean hybrid = false;
+
+            fleetName = dataParse.nextLine();
 
             while (dataParse.hasNextLine()) {
 
@@ -91,7 +95,13 @@ public class Fleet {
                     int year = Integer.parseInt(dataParse.nextLine());
 
                     //Data for the 'Automobile' class.
-                    boolean hybrid = Boolean.parseBoolean(dataParse.nextLine());
+                    String switcher = dataParse.nextLine();
+
+                    if (switcher.equals("1")) {
+                        hybrid = true;
+                    } else if (switcher.equals("0")) {
+                        hybrid = false;
+                    }
                     int maxPassengers = Integer.parseInt(dataParse.nextLine());
                     float trunkSpace = Float.parseFloat(dataParse.nextLine());
 
@@ -134,7 +144,13 @@ public class Fleet {
                     //Data for the 'PassengerVan' class.
                     int numSeatRows = Integer.parseInt(dataParse.nextLine());
                     int maxPassengers = Integer.parseInt(dataParse.nextLine());
-                    boolean dvdPlayer = Boolean.parseBoolean(dataParse.nextLine());
+                    String switcher = dataParse.nextLine();
+
+                    if (switcher.equals("1")) {
+                        dvdPlayer = true;
+                    } else if (switcher.equals("0")) {
+                        dvdPlayer = false;
+                    }
 
                     //Make a new PassengerVan object and store it in the fleetList ArrayList.
                     PassengerVan newPassengerVan = new PassengerVan(numSeatRows,

@@ -25,11 +25,11 @@ public class ProgramDriver {
     public static void main(String[] args) {
 
         Fleet newFleet = new Fleet("Aggie Fleet");
-        newFleet.loadFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
+        newFleet.loadFleet("C://Users//Patrick Hines//Downloads//vehicles.txt");
 
         newFleet.addVehicle(new Automobile(true, 789, 987, "Roar", "Something", "1234156548", 4884));
 
-//        newFleet.saveFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
+        newFleet.saveFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
         System.out.print(newFleet.toString());
 
     }

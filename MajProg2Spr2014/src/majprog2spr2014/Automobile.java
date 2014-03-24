@@ -109,10 +109,15 @@ public class Automobile extends Vehicle {
     @Override
     public String toString() {
         String finalString = "";
-        finalString += "A"
-                + super.toString() + System.getProperty("line.separator")
-                + getHybrid() + System.getProperty("line.separator")
-                + getMaxPassengers() + System.getProperty("line.separator")
+        finalString += System.getProperty("line.separator") + "A"
+                + super.toString() + System.getProperty("line.separator");
+        if (getHybrid()) {
+            finalString += "1" + System.getProperty("line.separator");
+        } else {
+            finalString += "0" + System.getProperty("line.separator");
+        }
+
+        finalString += getMaxPassengers() + System.getProperty("line.separator")
                 + getTrunkSpace();
 
         return finalString;

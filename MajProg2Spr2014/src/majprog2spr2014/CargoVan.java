@@ -91,7 +91,7 @@ public class CargoVan extends Van {
         finalString += System.getProperty("line.separator") + "C"
                 + super.toString() + System.getProperty("line.separator")
                 + getMaxLoad() + System.getProperty("line.separator")
-                + getCargoArea() + System.getProperty("line.separator");
+                + getCargoArea();
 
         return finalString;
 
