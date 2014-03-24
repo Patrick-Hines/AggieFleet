@@ -48,7 +48,8 @@ public class CargoVan extends Van {
      *
      * Formal-Arg constructor that takes in data for the superclass 'Van'
      */
-    public CargoVan(float givenMaxLoad, float givenCargoArea, float superClearanceHeight, int superNumWindows) {
+    public CargoVan(float givenMaxLoad, float givenCargoArea,
+            float superClearanceHeight, int superNumWindows) {
 
         super(superClearanceHeight, superNumWindows);
         maxLoad = givenMaxLoad;
@@ -87,10 +88,10 @@ public class CargoVan extends Van {
     public String toString() {
         String finalString = "";
 
-        finalString += "C" + System.getProperty("line.separator")
+        finalString += System.getProperty("line.separator") + "C"
                 + super.toString() + System.getProperty("line.separator")
                 + getMaxLoad() + System.getProperty("line.separator")
-                + getCargoArea();
+                + getCargoArea() + System.getProperty("line.separator");
 
         return finalString;
 

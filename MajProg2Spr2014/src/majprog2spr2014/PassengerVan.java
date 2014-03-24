@@ -97,7 +97,7 @@ public class PassengerVan extends Van {
     public String toString() {
         String finalString = "";
 
-        finalString += "P" + System.getProperty("line.separator")
+        finalString += System.getProperty("line.separator") + "P"
                 + super.toString() + System.getProperty("line.separator")
                 + getNumSeatRows() + System.getProperty("line.separator")
                 + getMaxPassengers() + System.getProperty("line.separator")

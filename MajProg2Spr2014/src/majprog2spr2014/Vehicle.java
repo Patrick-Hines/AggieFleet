@@ -106,7 +106,7 @@ public class Vehicle {
     public String toString() {
         String finalString = "";
 
-        finalString += getMake() + System.getProperty("line.separator")
+        finalString += System.getProperty("line.separator") + getMake() + System.getProperty("line.separator")
                 + getModel() + System.getProperty("line.separator")
                 + getVin() + System.getProperty("line.separator")
                 + getYear();

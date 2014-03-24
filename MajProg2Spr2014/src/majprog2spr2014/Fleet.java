@@ -16,6 +16,7 @@ package majprog2spr2014;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -26,15 +27,15 @@ import javax.swing.JOptionPane;
  */
 public class Fleet {
 
-    String fleetName;
-    ArrayList<Vehicle> fleetList;
+    private String fleetName;
+    private ArrayList<Vehicle> fleetList;
 
     /**
      * No-Argument Constructor. Sets properties to their default values.
      */
     public Fleet() {
         fleetName = "";
-        fleetList = null;
+        fleetList = new ArrayList<>();
     }
 
     /**
@@ -46,6 +47,7 @@ public class Fleet {
      */
     public Fleet(String fleetName) {
         this.fleetName = fleetName;
+        fleetList = new ArrayList<>();
     }
 
     /**
@@ -55,6 +57,11 @@ public class Fleet {
     @Override
     public String toString() {
         String finalString = "";
+        finalString += getFleetName() + System.getProperty("line.separator");
+
+        for (Vehicle pulledVehicle : fleetList) {
+            finalString += pulledVehicle.toString();
+        }
 
         return finalString;
     }
@@ -73,7 +80,9 @@ public class Fleet {
 
             while (dataParse.hasNextLine()) {
 
-                if (dataParse.nextLine().equalsIgnoreCase("A")) { //The following data will be for an Automobile.
+                if (dataParse.hasNext("A") || dataParse.hasNext("a")) { //The following data will be for an Automobile.
+
+                    dataParse.nextLine(); //Toss away the letter value
 
                     //Data for the 'Vehicle' class.
                     String make = dataParse.nextLine();
@@ -90,7 +99,9 @@ public class Fleet {
                     Automobile newAuto = new Automobile(hybrid, maxPassengers, trunkSpace, make, model, vin, year);
                     fleetList.add(newAuto);
 
-                } else if (dataParse.nextLine().equalsIgnoreCase("V")) { //The following data will be for a Van.
+                } else if (dataParse.hasNext("V") || dataParse.hasNext("v")) { //The following data will be for a Van.
+
+                    dataParse.nextLine(); //Toss away the letter value
 
                     //Data for the 'Vehicle' class.
                     String make = dataParse.nextLine();
@@ -106,7 +117,9 @@ public class Fleet {
                     Van newVan = new Van(clearanceHeight, numWindows, make, model, vin, year);
                     fleetList.add(newVan);
 
-                } else if (dataParse.nextLine().equalsIgnoreCase("P")) { //The following data will be for a PassengerVan.
+                } else if (dataParse.hasNext("P") || dataParse.hasNext("p")) { //The following data will be for a PassengerVan.
+
+                    dataParse.nextLine(); //Toss away the letter value
 
                     //Data for the 'Vehicle' class.
                     String make = dataParse.nextLine();
@@ -130,7 +143,9 @@ public class Fleet {
 
                     fleetList.add(newPassengerVan);
 
-                } else if (dataParse.nextLine().equalsIgnoreCase("C")) { //The following data will be for a CargoVan.
+                } else if (dataParse.hasNext("C") || dataParse.hasNext("c")) { //The following data will be for a CargoVan.
+
+                    dataParse.nextLine(); //Toss away the letter value
 
                     //Data for the 'Vehicle' class.
                     String make = dataParse.nextLine();
@@ -169,7 +184,17 @@ public class Fleet {
      * filepath.
      */
     public void saveFleet(String outputFileName) {
+        try {
+            File data = new File(outputFileName);
 
+            PrintWriter writer = new PrintWriter(data);
+
+            writer.println(this.toString());
+            writer.close();
+
+        } catch (FileNotFoundException notFound) {
+            JOptionPane.showMessageDialog(null, "Sorry, the file that you have specified can not be found.");
+        }
     }
 
     /**
@@ -258,6 +283,20 @@ public class Fleet {
         }
 
         return finalList;
+    }
+
+    /**
+     * @return the fleetName
+     */
+    public String getFleetName() {
+        return fleetName;
+    }
+
+    /**
+     * @param fleetName the fleetName to set
+     */
+    public void setFleetName(String fleetName) {
+        this.fleetName = fleetName;
     }
 
 }
