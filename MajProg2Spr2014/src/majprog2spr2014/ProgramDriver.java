@@ -16,7 +16,7 @@
  */
 package majprog2spr2014;
 
-import java.util.ArrayList;
+import javax.swing.JFrame;
 
 /**
  *
@@ -25,18 +25,9 @@ import java.util.ArrayList;
 public class ProgramDriver {
 
     public static void main(String[] args) {
-
-        //Testing Vehcile class
-        Vehicle mainVehicle = new Vehicle("Toyota", "Corolla", "Lorem Ipsum.", 1966);
-        System.out.print(mainVehicle.toString());
-
         //Testing Automobile class
         Automobile auto = new Automobile(false, 5, 30, "Dodge", "Corolla", "Lorem Ipsum.", 1966);
         System.out.println(auto.toString());
-
-        //Testing Van class
-        Van van = new Van(20, 6, "Scion", "Corolla", "Lorem Ipsum.", 1966);
-        System.out.println(van.toString());
 
         //Testing Passenger Van class
         PassengerVan passVan = new PassengerVan(3, 9, true, 20, 6, "Audi", "Corolla", "Lorem Ipsum.", 1966);
@@ -49,19 +40,24 @@ public class ProgramDriver {
         Fleet newFleet = new Fleet("Aggie Fleet");
         newFleet.loadFleet("C://Users//Patrick Hines//Downloads//vehicles.txt");
 
-        newFleet.addVehicle(mainVehicle);
         newFleet.addVehicle(auto);
-        newFleet.addVehicle(van);
         newFleet.addVehicle(passVan);
         newFleet.addVehicle(cargoVan);
 
-        ArrayList<Vehicle> newList = newFleet.getVehicleList(PassengerVan.class);
-
+//        ArrayList<Vehicle> newList = newFleet.getVehicleList(PassengerVan.class);
 //        newFleet.saveFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
 //        for (Vehicle x : newList) {
 //            System.out.print(x.toString());
 //        }
         System.out.print(newFleet.toString());
+
+        Interface window = new Interface();
+        window.setTitle(newFleet.getFleetName());
+
+        window.setSize(600, 100);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
 
     }
 }
