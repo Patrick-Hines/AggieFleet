@@ -8,13 +8,15 @@
 
  Developed by: Patrick Hines
  Began: 3-21-2014
- Ended:
+ Ended: 3-24-2014
 
 
  * ====================================================
 
  */
 package majprog2spr2014;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -27,10 +29,13 @@ public class ProgramDriver {
         Fleet newFleet = new Fleet("Aggie Fleet");
         newFleet.loadFleet("C://Users//Patrick Hines//Downloads//vehicles.txt");
 
-        newFleet.addVehicle(new Automobile(true, 789, 987, "Roar", "Something", "1234156548", 4884));
+        ArrayList<Vehicle> newList = newFleet.getVehicleList(PassengerVan.class);
 
-        newFleet.saveFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
-        System.out.print(newFleet.toString());
+//        newFleet.saveFleet("C://Users//Patrick Hines//Downloads//Driver.txt");
+        for (Vehicle x : newList) {
+            System.out.print(x.toString());
+        }
+//        System.out.print(newFleet.toString());
 
     }
 }
