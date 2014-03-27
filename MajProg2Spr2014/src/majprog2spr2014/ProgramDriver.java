@@ -49,9 +49,9 @@ public class ProgramDriver {
 //        for (Vehicle x : newList) {
 //            System.out.print(x.toString());
 //        }
-        System.out.print(newFleet.toString());
+        System.out.println(newFleet.toString());
 
-        Interface window = new Interface();
+        Interface window = new Interface(newFleet);
         window.setTitle(newFleet.getFleetName());
 
         window.setSize(600, 100);

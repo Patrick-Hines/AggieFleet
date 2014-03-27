@@ -14,7 +14,7 @@
 package majprog2spr2014;
 
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -51,7 +51,7 @@ public class Interface extends JFrame {
         introSection = new JPanel();
 
         commandButtons = new JPanel();
-        commandButtons.setLayout(new GridLayout(1, 4));
+        commandButtons.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         view = new JButton("View Fleet");
         add = new JButton("Add to Fleet");
@@ -107,10 +107,42 @@ public class Interface extends JFrame {
             } else if (btnRef.getText().equals("Add to Fleet")) { //Add button is clicked
                 String userOption = JOptionPane.showInputDialog("Please enter the type of vehicle you would like to add:");
 
+                if (userOption.equalsIgnoreCase("Passenger Van")
+                        || userOption.equalsIgnoreCase("PassengerVan")) { //User has entered 'Passenger Van'
+
+                    displayForm("PassengerVan");
+
+                } else if (userOption.equalsIgnoreCase("Automobile")) { //User has entered 'Automobile'
+                    displayForm("Automobile");
+                } else if (userOption.equalsIgnoreCase("Cargo Van")
+                        || userOption.equalsIgnoreCase("CargoVan")) { //User has entered 'Cargo Van'
+
+                    displayForm("CargoVan");
+
+                }
+
             } else if (btnRef.getText().equals("View Fleet")) { //View button is clicked
 
             }
         }
+    }
+
+    private void displayForm(String formType) {
+
+        AddingInterface window = new AddingInterface(activeFleet);
+
+        if (formType.equalsIgnoreCase("Automobile")) {
+            window.buildAutomobile();
+        } else if (formType.equalsIgnoreCase("PassengerVan")) {
+            window.buildPassengerVan();
+        } else if (formType.equalsIgnoreCase("CargoVan")) {
+            window.buildCargoVan();
+        }
+
+        window.setSize(200, 200);
+        window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
     }
 
 }
