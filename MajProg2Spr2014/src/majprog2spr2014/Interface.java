@@ -148,7 +148,7 @@ public class Interface extends JFrame {
 
     private void displayForm(String formType) {
 
-        AddingInterface window = new AddingInterface(activeFleet);
+        AddingInterface window = new AddingInterface(activeFleet, this);
 
         if (formType.equalsIgnoreCase("Automobile")) {
 
