@@ -42,11 +42,14 @@ public class Interface extends JFrame {
 
     Fleet activeFleet;
 
+    private boolean fileSaved;
+
     public Interface(Fleet givenFleet) {
 
         setLayout(new BorderLayout());
 
         activeFleet = givenFleet;
+        fileSaved = true;
 
         introSection = new JPanel();
 
@@ -76,6 +79,20 @@ public class Interface extends JFrame {
         add(introSection, BorderLayout.CENTER);
         add(commandButtons, BorderLayout.SOUTH);
 
+    }
+
+    /**
+     * @return the fileSaved
+     */
+    public boolean isFileSaved() {
+        return fileSaved;
+    }
+
+    /**
+     * @param fileSaved the fileSaved to set
+     */
+    public void setFileSaved(boolean fileSaved) {
+        this.fileSaved = fileSaved;
     }
 
     private class ButtonCommands implements ActionListener {
@@ -119,6 +136,8 @@ public class Interface extends JFrame {
 
                     displayForm("CargoVan");
 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid entry. Please enter either 'Automobile,' 'Passenger Van' or 'Cargo Van'");
                 }
 
             } else if (btnRef.getText().equals("View Fleet")) { //View button is clicked
@@ -132,14 +151,19 @@ public class Interface extends JFrame {
         AddingInterface window = new AddingInterface(activeFleet);
 
         if (formType.equalsIgnoreCase("Automobile")) {
+
             window.buildAutomobile();
+
         } else if (formType.equalsIgnoreCase("PassengerVan")) {
+
             window.buildPassengerVan();
+
         } else if (formType.equalsIgnoreCase("CargoVan")) {
+
             window.buildCargoVan();
         }
 
-        window.setSize(200, 200);
+        window.setSize(400, 200);
         window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
