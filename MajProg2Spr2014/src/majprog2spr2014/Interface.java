@@ -62,7 +62,7 @@ public class Interface extends JFrame {
         exit = new JButton("Exit Program");
 
         intro = new JLabel();
-        intro.setText("Lorem ipsum dolor sit amet, obortis viverra. Cras semper lacinia massa et placerat.");
+        intro.setText("Welcome to " + activeFleet.getFleetName() + ". To get started, please select one of the options below:");
 
         commandButtons.add(view);
         commandButtons.add(add);
@@ -103,23 +103,23 @@ public class Interface extends JFrame {
 
             if (btnRef.getText().equals("Exit Program")) { //Exit button is clicked
 
-                System.exit(0);
+                if (isFileSaved()) {
+                    System.exit(0);
+                } else {
+                    int userOption = JOptionPane.showConfirmDialog(null, "You have unsaved changes to your fleet. Would you like to save now?");
+
+                    if (userOption == JOptionPane.YES_OPTION) {
+                        saveFile();
+                        System.exit(0);
+
+                    } else if (userOption == JOptionPane.NO_OPTION) {
+                        System.exit(0);
+                    }
+                }
 
             } else if (btnRef.getText().equals("Save Fleet")) { //Save button is clicked
 
-                JFileChooser fileSelection = new JFileChooser();
-
-                int returnVal = fileSelection.showSaveDialog(null);
-
-                String filePath = fileSelection.getSelectedFile().getAbsolutePath();
-                filePath = filePath.replace("\\", "//");
-
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-                    activeFleet.saveFleet(filePath);
-                    JOptionPane.showMessageDialog(null, "File Saved Successfully.");
-
-                }
+                saveFile();
 
             } else if (btnRef.getText().equals("Add to Fleet")) { //Add button is clicked
                 String userOption = JOptionPane.showInputDialog("Please enter the type of vehicle you would like to add:");
@@ -143,7 +143,8 @@ public class Interface extends JFrame {
             } else if (btnRef.getText().equals("View Fleet")) { //View button is clicked
                 ViewingInterface window = new ViewingInterface(activeFleet);
 
-                window.setSize(500, 500);
+                window.setTitle("Fleet Summary");
+                window.setSize(500, 200);
                 window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                 window.setLocationRelativeTo(null);
                 window.setVisible(true);
@@ -172,6 +173,24 @@ public class Interface extends JFrame {
         window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+    }
+
+    private void saveFile() {
+        JFileChooser fileSelection = new JFileChooser();
+
+        int returnVal = fileSelection.showSaveDialog(null);
+
+        String filePath = fileSelection.getSelectedFile().getAbsolutePath();
+        filePath = filePath.replace("\\", "//");
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+
+            activeFleet.saveFleet(filePath);
+            JOptionPane.showMessageDialog(null, "File Saved Successfully.");
+
+        }
+
+        setFileSaved(true);
     }
 
 }
