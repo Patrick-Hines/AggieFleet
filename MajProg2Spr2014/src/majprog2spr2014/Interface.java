@@ -141,7 +141,12 @@ public class Interface extends JFrame {
                 }
 
             } else if (btnRef.getText().equals("View Fleet")) { //View button is clicked
+                ViewingInterface window = new ViewingInterface(activeFleet);
 
+                window.setSize(500, 500);
+                window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                window.setLocationRelativeTo(null);
+                window.setVisible(true);
             }
         }
     }
