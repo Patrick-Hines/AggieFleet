@@ -163,7 +163,7 @@ public class Interface extends JFrame {
             window.buildCargoVan();
         }
 
-        window.setSize(400, 200);
+        window.setSize(400, 300);
         window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
