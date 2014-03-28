@@ -11,7 +11,7 @@
 
  Developed by: Patrick Hines
  Began: 3-21-2014
- Ended:
+ Ended: 3-24-2014
 
 
  * ====================================================
@@ -28,16 +28,6 @@ public class Van extends Vehicle {
     protected float clearanceHeight;
     protected int numWindows;
 
-    public Van() {
-        clearanceHeight = 0;
-        numWindows = 0;
-    }
-
-    public Van(float givenClearanceHeight, int givenNumWindows) {
-        clearanceHeight = givenClearanceHeight;
-        numWindows = givenNumWindows;
-    }
-
     /**
      * @param givenClearanceHeight
      * @param givenNumWindows
@@ -46,7 +36,8 @@ public class Van extends Vehicle {
      * @param superVin
      * @param superYear
      *
-     * Formal-Arg constructor that takes in data for the superclass 'Vehicle'
+     * Formal-Argument constructor that takes in data for the superclass
+     * 'Vehicle'
      */
     public Van(float givenClearanceHeight, int givenNumWindows, String superMake, String superModel, String superVin, int superYear) {
 
@@ -72,28 +63,28 @@ public class Van extends Vehicle {
     }
 
     /**
-     * @return the clearanceHeight
+     * @return Returns the clearance height of the van.
      */
     public float getClearanceHeight() {
         return clearanceHeight;
     }
 
     /**
-     * @param clearanceHeight the clearanceHeight to set
+     * @param clearanceHeight Sets the clearance height of the van.
      */
     public void setClearanceHeight(float clearanceHeight) {
         this.clearanceHeight = clearanceHeight;
     }
 
     /**
-     * @return the numWindows
+     * @return Returns the number of windows on the van.
      */
     public int getNumWindows() {
         return numWindows;
     }
 
     /**
-     * @param numWindows the numWindows to set
+     * @param numWindows Sets the number of windows of the van.
      */
     public void setNumWindows(int numWindows) {
         this.numWindows = numWindows;

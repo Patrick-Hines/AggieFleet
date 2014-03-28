@@ -29,42 +29,6 @@ public class PassengerVan extends Van {
     private int maxPassengers;
     private boolean dvdPlayer;
 
-    public PassengerVan() {
-        super();
-
-        numSeatRows = 0;
-        maxPassengers = 0;
-        dvdPlayer = false;
-
-    }
-
-    public PassengerVan(int givenNumSeatRows, int givenMaxPassengers, boolean isDvdPlayer) {
-
-        numSeatRows = givenNumSeatRows;
-        maxPassengers = givenMaxPassengers;
-        dvdPlayer = isDvdPlayer;
-    }
-
-    /**
-     *
-     * @param givenNumSeatRows
-     * @param givenMaxPassengers
-     * @param isDvdPlayer
-     * @param superClearanceHeight
-     * @param superNumWindow
-     *
-     * Formal-Arg constructor that takes in data for the superclass 'Van'
-     */
-    public PassengerVan(int givenNumSeatRows, int givenMaxPassengers, boolean isDvdPlayer,
-            float superClearanceHeight, int superNumWindow) {
-
-        super(superClearanceHeight, superNumWindow);
-
-        numSeatRows = givenNumSeatRows;
-        maxPassengers = givenMaxPassengers;
-        dvdPlayer = isDvdPlayer;
-    }
-
     /**
      *
      * @param givenNumSeatRows
@@ -77,8 +41,8 @@ public class PassengerVan extends Van {
      * @param superVin
      * @param superYear
      *
-     * Formal-Arg constructor that takes in data for the superclass 'Van' and
-     * 'Vehicle'
+     * Formal-Argument constructor that takes in data for the superclass 'Van'
+     * and 'Vehicle'
      */
     public PassengerVan(int givenNumSeatRows, int givenMaxPassengers, boolean isDvdPlayer,
             float superClearanceHeight, int superNumWindow, String superMake, String superModel, String superVin, int superYear) {
@@ -112,42 +76,43 @@ public class PassengerVan extends Van {
     }
 
     /**
-     * @return the numSeatRows
+     * @return Returns the number of seat rows.
      */
     public int getNumSeatRows() {
         return numSeatRows;
     }
 
     /**
-     * @param numSeatRows the numSeatRows to set
+     * @param numSeatRows Sets the number of seat rows.
      */
     public void setNumSeatRows(int numSeatRows) {
         this.numSeatRows = numSeatRows;
     }
 
     /**
-     * @return the maxPassengers
+     * @return Returns the maximum number of passengers
      */
     public int getMaxPassengers() {
         return maxPassengers;
     }
 
     /**
-     * @param maxPassengers the maxPassengers to set
+     * @param maxPassengers Sets the maximum number of passengers
      */
     public void setMaxPassengers(int maxPassengers) {
         this.maxPassengers = maxPassengers;
     }
 
     /**
-     * @return the dvdPlayer
+     * @return Returns, as a boolean, whether the van has a DVD player or not.
      */
     public boolean getDvdPlayer() {
         return dvdPlayer;
     }
 
     /**
-     * @param dvdPlayer the dvdPlayer to set
+     * @param dvdPlayer Sets, as a boolean, whether the van has a DVD player or
+     * not.
      */
     public void setDvdPlayer(boolean dvdPlayer) {
         this.dvdPlayer = dvdPlayer;

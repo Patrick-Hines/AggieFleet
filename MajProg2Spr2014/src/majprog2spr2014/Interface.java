@@ -44,6 +44,12 @@ public class Interface extends JFrame {
 
     private boolean fileSaved;
 
+    /**
+     *
+     * @param givenFleet
+     *
+     * Constructor method to set default values.
+     */
     public Interface(Fleet givenFleet) {
 
         setLayout(new BorderLayout());
@@ -82,14 +88,15 @@ public class Interface extends JFrame {
     }
 
     /**
-     * @return the fileSaved
+     * @return Returns, as a boolean, whether or not the file has been saved.
      */
     public boolean isFileSaved() {
         return fileSaved;
     }
 
     /**
-     * @param fileSaved the fileSaved to set
+     * @param fileSaved Sets, as a boolean, whether or not the file has been
+     * saved.
      */
     public void setFileSaved(boolean fileSaved) {
         this.fileSaved = fileSaved;
@@ -105,6 +112,7 @@ public class Interface extends JFrame {
 
                 if (isFileSaved()) {
                     System.exit(0);
+
                 } else {
                     int userOption = JOptionPane.showConfirmDialog(null, "You have unsaved changes to your fleet. Would you like to save now?");
 
@@ -122,7 +130,7 @@ public class Interface extends JFrame {
                 saveFile();
 
             } else if (btnRef.getText().equals("Add to Fleet")) { //Add button is clicked
-                String userOption = JOptionPane.showInputDialog("Please enter the type of vehicle you would like to add:");
+                String userOption = JOptionPane.showInputDialog("Please enter the type of vehicle you would like to add (Automobile, Passenger Van or Cargo Van):");
 
                 if (userOption.equalsIgnoreCase("Passenger Van")
                         || userOption.equalsIgnoreCase("PassengerVan")) { //User has entered 'Passenger Van'
@@ -152,6 +160,13 @@ public class Interface extends JFrame {
         }
     }
 
+    /**
+     *
+     * @param formType
+     *
+     * Method that dynamically generates the form for adding a vehicle to the
+     * current fleet.
+     */
     private void displayForm(String formType) {
 
         AddingInterface window = new AddingInterface(activeFleet, this);
@@ -175,6 +190,9 @@ public class Interface extends JFrame {
         window.setVisible(true);
     }
 
+    /**
+     * Simple method to save the fleet as a plain text file
+     */
     private void saveFile() {
         JFileChooser fileSelection = new JFileChooser();
 

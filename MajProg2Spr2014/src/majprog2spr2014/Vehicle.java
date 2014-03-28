@@ -35,6 +35,16 @@ public class Vehicle {
         year = 0;
     }
 
+    /**
+     *
+     * @param make
+     * @param model
+     * @param vin
+     * @param year
+     *
+     * Formal-Argument constructor that sets the class' properties to their
+     * specified values.
+     */
     public Vehicle(String make, String model, String vin, int year) {
         this.make = make;
         this.model = model;
@@ -44,63 +54,63 @@ public class Vehicle {
     }
 
     /**
-     * @return the make
+     * @return Returns the make of the vehicle.
      */
     public String getMake() {
         return make;
     }
 
     /**
-     * @param make the make to set
+     * @param make Sets the make of the vehicle.
      */
     public void setMake(String make) {
         this.make = make;
     }
 
     /**
-     * @return the model
+     * @return Returns the model of the vehicle.
      */
     public String getModel() {
         return model;
     }
 
     /**
-     * @param model the model to set
+     * @param model Sets the model of the vehicle.
      */
     public void setModel(String model) {
         this.model = model;
     }
 
     /**
-     * @return the vin
+     * @return Returns the vehicle identification number (VIN) of the vehicle.
      */
     public String getVin() {
         return vin;
     }
 
     /**
-     * @param vin the vin to set
+     * @param vin Sets the vehicle identification number (VIN) of the vehicle.
      */
     public void setVin(String vin) {
         this.vin = vin;
     }
 
     /**
-     * @return the year
+     * @return Returns the year of the vehicle.
      */
     public int getYear() {
         return year;
     }
 
     /**
-     * @param year the year to set
+     * @param year Sets the year of the vehicle.
      */
     public void setYear(int year) {
         this.year = year;
     }
 
     /**
-     * @return A single String of all data in the class.
+     * @return Returns a single String of all data in the class.
      */
     @Override
     public String toString() {

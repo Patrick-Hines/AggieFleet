@@ -31,14 +31,6 @@ public class Fleet {
     private ArrayList<Vehicle> fleetList;
 
     /**
-     * No-Argument Constructor. Sets properties to their default values.
-     */
-    public Fleet() {
-        fleetName = "";
-        fleetList = new ArrayList<>();
-    }
-
-    /**
      *
      * @param fleetName
      *
@@ -273,14 +265,14 @@ public class Fleet {
     }
 
     /**
-     * @return the fleetName
+     * @return Returns the loaded fleet's name.
      */
     public String getFleetName() {
         return fleetName;
     }
 
     /**
-     * @param fleetName the fleetName to set
+     * @param fleetName Sets the name of the loaded fleet.
      */
     public void setFleetName(String fleetName) {
         this.fleetName = fleetName;

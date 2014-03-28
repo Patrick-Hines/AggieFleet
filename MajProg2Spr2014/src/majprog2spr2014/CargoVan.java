@@ -28,35 +28,6 @@ public class CargoVan extends Van {
     private float maxLoad;
     private float cargoArea;
 
-    public CargoVan() {
-        maxLoad = 0;
-        cargoArea = 0;
-    }
-
-    public CargoVan(float givenMaxLoad, float givenCargoArea) {
-        maxLoad = givenMaxLoad;
-        cargoArea = givenCargoArea;
-
-    }
-
-    /**
-     *
-     * @param givenMaxLoad
-     * @param givenCargoArea
-     * @param superClearanceHeight
-     * @param superNumWindows
-     *
-     * Formal-Arg constructor that takes in data for the superclass 'Van'
-     */
-    public CargoVan(float givenMaxLoad, float givenCargoArea,
-            float superClearanceHeight, int superNumWindows) {
-
-        super(superClearanceHeight, superNumWindows);
-        maxLoad = givenMaxLoad;
-        cargoArea = givenCargoArea;
-
-    }
-
     /**
      *
      * @param givenMaxLoad
@@ -98,28 +69,28 @@ public class CargoVan extends Van {
     }
 
     /**
-     * @return the maxLoad
+     * @return The maximum load of the cargo van.
      */
     public float getMaxLoad() {
         return maxLoad;
     }
 
     /**
-     * @param maxLoad the maxLoad to set
+     * @param maxLoad Set the maximum load of the cargo van.
      */
     public void setMaxLoad(float maxLoad) {
         this.maxLoad = maxLoad;
     }
 
     /**
-     * @return the cargoArea
+     * @return The cargo area of the cargo van.
      */
     public float getCargoArea() {
         return cargoArea;
     }
 
     /**
-     * @param cargoArea the cargoArea to set
+     * @param cargoArea Set the cargo area of the cargo van.
      */
     public void setCargoArea(float cargoArea) {
         this.cargoArea = cargoArea;

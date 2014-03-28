@@ -25,20 +25,6 @@ public class Automobile extends Vehicle {
     private int maxPassengers;
     private float trunkSpace;
 
-    public Automobile() {
-
-        hybrid = false;
-        maxPassengers = 0;
-        trunkSpace = 0;
-    }
-
-    public Automobile(boolean isHybrid, int givenMaxPassengers, float givenTrunkSpace) {
-
-        hybrid = isHybrid;
-        maxPassengers = givenMaxPassengers;
-        trunkSpace = givenTrunkSpace;
-    }
-
     /**
      *
      * @param isHybrid
@@ -62,42 +48,42 @@ public class Automobile extends Vehicle {
     }
 
     /**
-     * @return the hybrid
+     * @return Returns the boolean value of 'hybrid'.
      */
     public boolean getHybrid() {
         return hybrid;
     }
 
     /**
-     * @param hybrid the hybrid to set
+     * @param hybrid The hybrid boolean value to set.
      */
     public void setHybrid(boolean hybrid) {
         this.hybrid = hybrid;
     }
 
     /**
-     * @return the maxPassengers
+     * @return The maximum number of passengers.
      */
     public int getMaxPassengers() {
         return maxPassengers;
     }
 
     /**
-     * @param maxPassengers the maxPassengers to set
+     * @param maxPassengers Set the maximum number of passengers.
      */
     public void setMaxPassengers(int maxPassengers) {
         this.maxPassengers = maxPassengers;
     }
 
     /**
-     * @return the trunkSpace
+     * @return The size of the trunk space.
      */
     public float getTrunkSpace() {
         return trunkSpace;
     }
 
     /**
-     * @param trunkSpace the trunkSpace to set
+     * @param trunkSpace Sets the size of the trunk space.
      */
     public void setTrunkSpace(float trunkSpace) {
         this.trunkSpace = trunkSpace;
